@@ -19,12 +19,14 @@
 <body>
 <?php?> 
        <?php
-        $buch1 = "dunkle materie";
-        $gelesen = true;
+        $buch1 = " -dunkle materie";
+        $gelesen = false;
         
         if($gelesen)
         {
-            $aussage = "du hast gelesen: $buch1";
+            $aussage = "du hast gelesen: $buch1";    
+        }else{
+            $aussage = "du hast nicht gelesen: $buch1"; 
         }
 
         ?> 
@@ -32,12 +34,12 @@
          <?php 
          $gruss = "Hello ";
          $grussZiel = "World ";
-         echo $gruss . $grussZiel;
+        
        
          ?> 
     </h1>
 	<h1>
-       <?php echo $aussage ?> 
+    <?= $aussage ?> 
     </h1>
 </body>
 </html>
