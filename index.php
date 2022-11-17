@@ -8,7 +8,7 @@
            
     display: grid;
     place-items: center;
-    height: 100vh;
+    height: 10vh;
     margin: 0;
     font-family: sans-serif;
 
@@ -17,29 +17,31 @@
 
 </head>
 <body>
-<?php?> 
-       <?php
-        $buch1 = " -dunkle materie";
-        $gelesen = false;
-        
-        if($gelesen)
-        {
-            $aussage = "du hast gelesen: $buch1";    
-        }else{
-            $aussage = "du hast nicht gelesen: $buch1"; 
-        }
-
-        ?> 
-	<h1>
-         <?php 
-         $gruss = "Hello ";
-         $grussZiel = "World ";
-        
+    <?php
+        $autos = [
+            "la ferrari",
+            "bugatti grand sports",
+            "ds survolt",
+            "lamboghini aventador",
+            "la blance"
+        ];
+    ?> 
        
-         ?> 
+    
+
+        <h1>
+        
+      
+        </h1>
+    <h1>
+    gekaufte autos
     </h1>
-	<h1>
-    <?= $aussage ?> 
-    </h1>
+    <ul>
+
+        <?php foreach ($autos as $auto) : ?>
+        <li>    <?= $auto ?> </li>
+        <?php endforeach; ?>
+
+    </ul>
 </body>
 </html>
