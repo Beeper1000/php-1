@@ -38,9 +38,7 @@
     </h1>
     <ul>
 
-        <?php foreach ($autos as $auto) : ?>
-        <li>    <?= $auto ?> </li>
-        <?php endforeach; ?>
+       <?= $autos[0] ?>
 
     </ul>
 </body>
