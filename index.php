@@ -19,12 +19,26 @@
 <body>
     <?php
         $autos = [
-            "la ferrari",
-            "bugatti grand sports",
-            "ds survolt",
-            "lamboghini aventador",
-            "la blance"
+            [
+                'name' =>'la ferrari',
+            'marke' =>'ferrari',
+            'link' =>'https://de.wikipedia.org/wiki/Ferrari',
+            'year' =>'1213'
+            ],
+           [
+            'name' =>'grand sports',
+           'marke' =>'bugatti',
+           'link' =>'https://de.wikipedia.org/wiki/Bugatti',
+           'year' =>'1990'
+           ],
+          [
+            'name' =>'vitesse',
+           'marke' =>'bugatti',
+           'link' =>'https://de.wikipedia.org/wiki/Bugatti',
+           'year' =>'1995'
+           ]
         ];
+        
     ?> 
        
     
@@ -38,8 +52,18 @@
     </h1>
     <ul>
 
-       <?= $autos[0] ?>
+    <?php foreach ($autos as $auto) : ?>
+       <?php if ($book['marke'] = 'bugatti') :  ?>
+        <li>
+            <a href="<?= $book['link']?> ">
 
+            <?= $auto['name']; ?>      (<?= $auto['year'] ?>)    -By <?= $auto['marke'] ?>
+
+              </a>
+            </li>
+           
+            <?php endif; ?>
+        <?php endforeach; ?>
     </ul>
-</body>
+
 </html>
