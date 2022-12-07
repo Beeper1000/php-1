@@ -36,9 +36,29 @@
            'marke' =>'bugatti',
            'link' =>'https://de.wikipedia.org/wiki/Bugatti',
            'year' =>'1995'
+           ],
+          [
+            'name' =>'Chiron',
+           'marke' =>'bugatti',
+           'link' =>'https://de.wikipedia.org/wiki/Bugatti',
+           'year' =>'2005'
            ]
         ];
-        
+
+     function filterByMarke($autos, $marke)
+      {
+            $filteredAutos = [];    
+       
+       foreach ($autos as $auto) {
+            if($auto['marke']=== $marke) {
+                    $filteredAutos[] = $auto;
+            }
+         }
+         return $filteredAutos;
+    }
+
+       
+
     ?> 
        
     
@@ -52,10 +72,10 @@
     </h1>
     <ul>
 
-    <?php foreach ($autos as $auto) : ?>
-       <?php if ($book['marke'] = 'bugatti') :  ?>
+    <?php foreach (filterByMarke($autos,'bugatti') as $auto) : ?>
+        <?php if ($auto['marke'] === 'bugatti') :  ?>
         <li>
-            <a href="<?= $book['link']?> ">
+            <a href="<?= $auto['link']?> ">
 
             <?= $auto['name']; ?>      (<?= $auto['year'] ?>)    -By <?= $auto['marke'] ?>
 
@@ -65,5 +85,12 @@
             <?php endif; ?>
         <?php endforeach; ?>
     </ul>
+
+    <p>
+
+   
+    </p>
+
+
 
 </html>
