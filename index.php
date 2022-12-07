@@ -20,37 +20,33 @@
     <?php
         $autos = [
             [
-                'name' =>'la ferrari',
-            'marke' =>'ferrari',
-            'link' =>'https://de.wikipedia.org/wiki/Ferrari',
-            'year' =>'1213'
+                'name' =>'thor',
+            'creator' =>'marvel',
+            'year' =>'2022'
             ],
            [
-            'name' =>'grand sports',
-           'marke' =>'bugatti',
-           'link' =>'https://de.wikipedia.org/wiki/Bugatti',
+            'name' =>'dr.strange',
+           'creator' =>'marvel',
            'year' =>'1990'
            ],
           [
-            'name' =>'vitesse',
-           'marke' =>'bugatti',
-           'link' =>'https://de.wikipedia.org/wiki/Bugatti',
-           'year' =>'1995'
+            'name' =>'end game',
+           'creator' =>'marvel',
+           'year' =>'2000'
            ],
           [
-            'name' =>'Chiron',
-           'marke' =>'bugatti',
-           'link' =>'https://de.wikipedia.org/wiki/Bugatti',
+            'name' =>'der Sueden',
+           'creator' =>'tom',
            'year' =>'2005'
            ]
         ];
 
-     function filterByMarke($autos, $marke)
+     function filterByYear($autos, $year)
       {
             $filteredAutos = [];    
        
        foreach ($autos as $auto) {
-            if($auto['marke']=== $marke) {
+            if($auto['year']=== $year) {
                     $filteredAutos[] = $auto;
             }
          }
@@ -68,16 +64,16 @@
       
         </h1>
     <h1>
-    gekaufte autos
+    Filme
     </h1>
     <ul>
 
-    <?php foreach (filterByMarke($autos,'bugatti') as $auto) : ?>
-        <?php if ($auto['marke'] === 'bugatti') :  ?>
+    <?php foreach (filterByYear($autos,'2022') as $auto) : ?>
+        <?php if ($auto['year'] <= '2022') :  ?>
         <li>
-            <a href="<?= $auto['link']?> ">
+            
 
-            <?= $auto['name']; ?>      (<?= $auto['year'] ?>)    -By <?= $auto['marke'] ?>
+            <?= $auto['name']; ?>         (<?= $auto['creator'] ?>)      -By <?= $auto['year'] ?>
 
               </a>
             </li>
